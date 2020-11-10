@@ -1,0 +1,3081 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/7/2020 1:51:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-O9LL07G"
+  DTS:CreatorName="DESKTOP-O9LL07G\Lherner"
+  DTS:DTSID="{EAB09D51-5F4B-4B31-BC61-6BED5E1123ED}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="10250"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{4A97A539-7FD5-435E-A407-6C18508D08E3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DIM TIEMPO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{083FAA34-1893-48A2-B30E-80A567AA4FA1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM TIEMPO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DIM TIEMPO\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input].Columns[order_date]"
+                      cachedDataType="dbDate"
+                      cachedName="order_date"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input].Columns[anio]"
+                      cachedDataType="i4"
+                      cachedName="anio"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[anio]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input].Columns[mes]"
+                      cachedDataType="i4"
+                      cachedName="mes"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input].Columns[dia]"
+                      cachedDataType="i4"
+                      cachedName="dia"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[dia]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de order_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de order_date]"
+                      name="Copia de order_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de anio]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de anio]"
+                      name="Copia de anio"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[anio]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de mes]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de mes]"
+                      name="Copia de mes"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de dia]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de dia]"
+                      name="Copia de dia"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[dia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM TIEMPO\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_TIEMPO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM TIEMPO\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{2D59B1AE-E015-490A-B1C3-060B9CB27652}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-O9LL07G.DWBikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de order_date]"
+                      cachedDataType="date"
+                      cachedName="Copia de order_date"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_fecha]"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de order_date]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de anio]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de anio"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_anio]"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de anio]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de mes]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de mes"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_mes]"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de mes]" />
+                    <inputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de dia]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de dia"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_dia]"
+                      lineageId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de dia]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_id]"
+                      dataType="i4"
+                      name="tiempo_id" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_fecha]"
+                      dataType="dbDate"
+                      name="tiempo_fecha" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_anio]"
+                      dataType="i4"
+                      name="tiempo_anio" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_mes]"
+                      dataType="i4"
+                      name="tiempo_mes" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_dia]"
+                      dataType="i4"
+                      name="tiempo_dia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DIM TIEMPO\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DIM TIEMPO\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT CONVERT (DATE, order_date) AS order_date,
+				CONVERT(INT, DATEPART(YEAR, order_date)) AS anio,
+				CONVERT(INT,DATEPART(MONTH, order_date)) AS mes,
+				CONVERT(INT, DATEPART(DAY, order_date)) AS dia
+FROM [sales].[orders]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DIM TIEMPO\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{5221235B-59CD-4018-84D0-FB3A17CBF018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Origen_BikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      name="order_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[anio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[anio]"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[anio]"
+                      name="anio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[mes]"
+                      name="mes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[dia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dia]"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].Columns[dia]"
+                      name="dia"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      dataType="dbDate"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[anio]"
+                      dataType="i4"
+                      name="anio" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[mes]"
+                      dataType="i4"
+                      name="mes" />
+                    <externalMetadataColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[dia]"
+                      dataType="i4"
+                      name="dia" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      dataType="dbDate"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      name="order_date" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[anio]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[anio]"
+                      name="anio" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mes]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[mes]"
+                      name="mes" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dia]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[dia]"
+                      name="dia" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DIM TIEMPO.Paths[Data Conversion Output]"
+              endId="Package\DIM TIEMPO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DIM TIEMPO\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DIM TIEMPO.Paths[OLE DB Source Output]"
+              endId="Package\DIM TIEMPO\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DIM TIEMPO\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL ORDENES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B069004D-D427-46F7-B53F-58BD9C976E0C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL ORDENES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL ORDENES\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[tienda_id]"
+                      cachedDataType="i4"
+                      cachedName="tienda_id"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tienda_id]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[tiempo_id]"
+                      cachedDataType="i4"
+                      cachedName="tiempo_id"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tiempo_id]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input].Columns[productos_id]"
+                      cachedDataType="i4"
+                      cachedName="productos_id"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[productos_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de quantity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de quantity]"
+                      name="Copia de quantity"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]"
+                      name="Copia de list_price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de discount]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de discount]"
+                      name="Copia de discount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tienda_id]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tienda_id]"
+                      name="Copia de tienda_id"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tienda_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tiempo_id]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tiempo_id]"
+                      name="Copia de tiempo_id"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tiempo_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de productos_id]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de productos_id]"
+                      name="Copia de productos_id"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[productos_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL ORDENES\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[H_ORDENES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL ORDENES\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{2D59B1AE-E015-490A-B1C3-060B9CB27652}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-O9LL07G.DWBikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de tienda_id]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de tienda_id"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiendas_id]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tienda_id]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de productos_id]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de productos_id"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_id]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de productos_id]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de tiempo_id]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de tiempo_id"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_id]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de tiempo_id]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de quantity]"
+                      cachedDataType="numeric"
+                      cachedName="Copia de quantity"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_cantidad]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de quantity]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de list_price]"
+                      cachedDataType="r4"
+                      cachedName="Copia de list_price"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_precio]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]" />
+                    <inputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de discount]"
+                      cachedDataType="r4"
+                      cachedName="Copia de discount"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_descuento]"
+                      lineageId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiendas_id]"
+                      dataType="i4"
+                      name="tiendas_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_id]"
+                      dataType="i4"
+                      name="productos_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_id]"
+                      dataType="i4"
+                      name="tiempo_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_cantidad]"
+                      dataType="i4"
+                      name="ordenes_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_precio]"
+                      dataType="numeric"
+                      name="ordenes_precio"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ordenes_descuento]"
+                      dataType="numeric"
+                      name="ordenes_descuento"
+                      precision="4"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL ORDENES\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL ORDENES\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT tiendaDIM.tienda_id, tiempoDIM.tiempo_id , productosDIM.productos_id, ord_i.quantity, ord_i.list_price, ord_i.discount
+FROM [BikeStores].[sales].stores AS sto
+INNER JOIN [BikeStores].[sales].orders AS ord ON sto.store_id = ord.store_id
+INNER JOIN [BikeStores].[production].[stocks] AS stoc ON stoc.store_id = sto.store_id
+INNER JOIN [BikeStores].[production].[products] AS prod ON prod.product_id = stoc.product_id
+INNER JOIN [BikeStores].[sales].[order_items] AS ord_i ON ord_i.product_id = prod.product_id
+INNER JOIN DWBikeStores.dbo.DIM_TIENDAS tiendaDIM ON tiendaDIM.tienda_nombre = sto.store_name
+INNER JOIN DWBikeStores.dbo.DIM_PRODUCTOS productosDIM ON productosDIM.productos_nombre = prod.product_name
+INNER JOIN DWBikeStores.dbo.DIM_TIEMPO tiempoDIM ON tiempoDIM.tiempo_fecha = CONVERT(DATE,ord.order_date)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL ORDENES\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{5221235B-59CD-4018-84D0-FB3A17CBF018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Origen_BikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tienda_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tienda_id]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tienda_id]"
+                      name="tienda_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tiempo_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tiempo_id]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[tiempo_id]"
+                      name="tiempo_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[productos_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[productos_id]"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].Columns[productos_id]"
+                      name="productos_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tienda_id]"
+                      dataType="i4"
+                      name="tienda_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tiempo_id]"
+                      dataType="i4"
+                      name="tiempo_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[productos_id]"
+                      dataType="i4"
+                      name="productos_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tienda_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tienda_id]"
+                      name="tienda_id" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tiempo_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tiempo_id]"
+                      name="tiempo_id" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[productos_id]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[productos_id]"
+                      name="productos_id" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      dataType="numeric"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL ORDENES.Paths[Data Conversion Output]"
+              endId="Package\ETL ORDENES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\ETL ORDENES\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL ORDENES.Paths[OLE DB Source Output]"
+              endId="Package\ETL ORDENES\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL ORDENES\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL PRODUCTO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{368445B0-D561-4F7C-AAD9-5421EA78DCF2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL PRODUCTO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL PRODUCTO\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input].Columns[product_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="product_name"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name]" />
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input].Columns[brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="brand_name"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_name]" />
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de product_name]"
+                      name="Copia de product_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de brand_name]"
+                      name="Copia de brand_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]"
+                      name="Copia de list_price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL PRODUCTO\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_PRODUCTOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL PRODUCTO\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{2D59B1AE-E015-490A-B1C3-060B9CB27652}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-O9LL07G.DWBikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de product_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de product_name"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_nombre]"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de product_name]" />
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de brand_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de brand_name"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_marca]"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de brand_name]" />
+                    <inputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de list_price]"
+                      cachedDataType="r4"
+                      cachedName="Copia de list_price"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_precio]"
+                      lineageId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de list_price]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_id]"
+                      dataType="i4"
+                      name="productos_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="productos_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_marca]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="productos_marca" />
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[productos_precio]"
+                      dataType="numeric"
+                      name="productos_precio"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL PRODUCTO\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL PRODUCTO\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT product_name, br.brand_name as brand_name, list_price
+FROM [production].[products] AS pr
+INNER JOIN [production].[brands] AS br ON pr.brand_id = br.brand_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL PRODUCTO\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{5221235B-59CD-4018-84D0-FB3A17CBF018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Origen_BikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_name]"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[product_name]"
+                      name="product_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[brand_name]"
+                      name="brand_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="product_name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="brand_name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[product_name]"
+                      name="product_name" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[brand_name]"
+                      name="brand_name" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      dataType="numeric"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL PRODUCTO.Paths[Data Conversion Output]"
+              endId="Package\ETL PRODUCTO\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\ETL PRODUCTO\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL PRODUCTO.Paths[OLE DB Source Output]"
+              endId="Package\ETL PRODUCTO\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL PRODUCTO\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL TIENDAS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{22FCFD92-80C3-43CE-AAE6-6A84C11EDEB9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL TIENDAS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL TIENDAS\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[store_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="store_name"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="phone"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="email"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="street"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="city"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="state"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input].Columns[zip_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="zip_code"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de store_name]"
+                      name="Copia de store_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="25"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de phone]"
+                      name="Copia de phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de email]"
+                      name="Copia de email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de street]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de street]"
+                      name="Copia de street"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de city]"
+                      name="Copia de city"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de state]"
+                      name="Copia de state"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de zip_code]"
+                      name="Copia de zip_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL TIENDAS\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_TIENDAS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL TIENDAS\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{2D59B1AE-E015-490A-B1C3-060B9CB27652}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-O9LL07G.DWBikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de store_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de store_name"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_nombre]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de store_name]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="Copia de phone"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_telefono]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de phone]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de email"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_email]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de email]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de street"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_calle]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de street]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de zip_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copia de zip_code"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_codigo]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de zip_code]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Copia de state"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_estado]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de state]" />
+                    <inputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copia de city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copia de city"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_ciudad]"
+                      lineageId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output].Columns[Copia de city]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_id]"
+                      dataType="i4"
+                      name="tienda_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="tienda_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_telefono]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="tienda_telefono" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="tienda_email" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_calle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="tienda_calle" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="tienda_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="tienda_estado" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="tienda_codigo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL TIENDAS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL TIENDAS\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT store_name, phone, email, street, city, state, zip_code
+FROM [sales].[stores]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL TIENDAS\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{5221235B-59CD-4018-84D0-FB3A17CBF018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Origen_BikeStores]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      name="store_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      length="25"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]"
+                      name="street"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      length="10"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                      length="5"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].Columns[zip_code]"
+                      name="zip_code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="zip_code" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      name="store_name" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[street]"
+                      name="street" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state]"
+                      name="state" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zip_code]"
+                      name="zip_code" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL TIENDAS.Paths[Data Conversion Output]"
+              endId="Package\ETL TIENDAS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\ETL TIENDAS\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL TIENDAS.Paths[OLE DB Source Output]"
+              endId="Package\ETL TIENDAS\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL TIENDAS\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{4C3299BB-A7CD-4A3E-8C88-719C27A7F9EE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2D59B1AE-E015-490A-B1C3-060B9CB27652}"
+          SQLTask:SqlStatementSource="DELETE FROM H_ORDENES;&#xA;DELETE FROM DIM_TIENDAS;&#xA;DELETE FROM DIM_PRODUCTOS;&#xA;DELETE FROM DIM_TIEMPO;&#xA;DELETE FROM H_ORDENES;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F15F905-2BF2-4817-B385-8C8A853DE9CD}"
+      DTS:From="Package\ETL TIENDAS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\ETL ORDENES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{21E1BE72-EFDD-4860-AC44-921311E6AA47}"
+      DTS:From="Package\ETL PRODUCTO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\ETL ORDENES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{DED7EB8E-6284-4BB7-A5FB-18A00F718678}"
+      DTS:From="Package\DIM TIEMPO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\ETL ORDENES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{45D454CD-E9B7-46F0-A27F-AEE319A90A57}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\ETL TIENDAS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{92A9D47A-CB25-4478-BB2B-9A233A2CC628}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\ETL PRODUCTO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{A5EE35FB-BB26-45F6-B754-B227B4E28C36}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 5"
+      DTS:To="Package\DIM TIEMPO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\DIM TIEMPO"
+          TopLeft="770,222" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\ETL ORDENES"
+          TopLeft="478,433" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\ETL PRODUCTO"
+          TopLeft="468,226" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\ETL TIENDAS"
+          TopLeft="203,227" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="450,95" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="274.5,269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="242,164"
+              Start="0,0"
+              End="242,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103.372197309417" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,103.372197309417"
+                    Point2="0,107.372197309417"
+                    Point3="4,107.372197309417" />
+                  <mssgle:LineSegment
+                    End="238,107.372197309417" />
+                  <mssgle:CubicBezierSegment
+                    Point1="238,107.372197309417"
+                    Point2="242,107.372197309417"
+                    Point3="242,111.372197309417" />
+                  <mssgle:LineSegment
+                    End="242,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="548,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,165"
+              Start="0,0"
+              End="0,157.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,157.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="840,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-254.5,169"
+              Start="0,0"
+              End="-254.5,161.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,106.645739910314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,106.645739910314"
+                    Point2="0,110.645739910314"
+                    Point3="-4,110.645739910314" />
+                  <mssgle:LineSegment
+                    End="-250.5,110.645739910314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-250.5,110.645739910314"
+                    Point2="-254.5,110.645739910314"
+                    Point3="-254.5,114.645739910314" />
+                  <mssgle:LineSegment
+                    End="-254.5,161.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="499,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-224.5,90"
+              Start="0,0"
+              End="-224.5,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="-4,29" />
+                  <mssgle:LineSegment
+                    End="-220.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-220.5,29"
+                    Point2="-224.5,29"
+                    Point3="-224.5,33" />
+                  <mssgle:LineSegment
+                    End="-224.5,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="544,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 5]"
+          TopLeft="575.5,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="264.5,85"
+              Start="0,0"
+              End="264.5,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2084942084942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2084942084942"
+                    Point2="0,29.2084942084942"
+                    Point3="4,29.2084942084942" />
+                  <mssgle:LineSegment
+                    End="260.5,29.2084942084942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="260.5,29.2084942084942"
+                    Point2="264.5,29.2084942084942"
+                    Point3="264.5,33.2084942084942" />
+                  <mssgle:LineSegment
+                    End="264.5,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DIM TIEMPO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DIM TIEMPO\OLE DB Source"
+          TopLeft="285,120" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DIM TIEMPO\Data Conversion"
+          TopLeft="503,316" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DIM TIEMPO\OLE DB Destination"
+          TopLeft="767,467" />
+        <EdgeLayout
+          Id="Package\DIM TIEMPO.Paths[OLE DB Source Output]"
+          TopLeft="360,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221,154"
+              Start="0,0"
+              End="221,146.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73"
+                    Point2="0,77"
+                    Point3="4,77" />
+                  <mssgle:LineSegment
+                    End="217,77" />
+                  <mssgle:CubicBezierSegment
+                    Point1="217,77"
+                    Point2="221,77"
+                    Point3="221,81" />
+                  <mssgle:LineSegment
+                    End="221,146.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DIM TIEMPO.Paths[Data Conversion Output]"
+          TopLeft="581,358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="271.5,109"
+              Start="0,0"
+              End="271.5,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
+                  <mssgle:LineSegment
+                    End="267.5,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="267.5,54.5"
+                    Point2="271.5,54.5"
+                    Point3="271.5,58.5" />
+                  <mssgle:LineSegment
+                    End="271.5,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM TIEMPO\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DIM TIEMPO\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ETL ORDENES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\ETL ORDENES\OLE DB Source"
+          TopLeft="144,114" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ETL ORDENES\Data Conversion"
+          TopLeft="423,223" />
+        <EdgeLayout
+          Id="Package\ETL ORDENES.Paths[OLE DB Source Output]"
+          TopLeft="219,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="282,67"
+              Start="0,0"
+              End="282,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="278,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="278,33.5"
+                    Point2="282,33.5"
+                    Point3="282,37.5" />
+                  <mssgle:LineSegment
+                    End="282,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ETL ORDENES\OLE DB Destination"
+          TopLeft="493,368" />
+        <EdgeLayout
+          Id="Package\ETL ORDENES.Paths[Data Conversion Output]"
+          TopLeft="501,265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5,103"
+              Start="0,0"
+              End="77.5,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.5"
+                    Point2="0,51.5"
+                    Point3="4,51.5" />
+                  <mssgle:LineSegment
+                    End="73.5,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,51.5"
+                    Point2="77.5,51.5"
+                    Point3="77.5,55.5" />
+                  <mssgle:LineSegment
+                    End="77.5,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL ORDENES\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ETL PRODUCTO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\ETL PRODUCTO\OLE DB Source"
+          TopLeft="288,90" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ETL PRODUCTO\OLE DB Destination"
+          TopLeft="611,390" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ETL PRODUCTO\Data Conversion"
+          TopLeft="446,248" />
+        <EdgeLayout
+          Id="Package\ETL PRODUCTO.Paths[OLE DB Source Output]"
+          TopLeft="363,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161,116"
+              Start="0,0"
+              End="161,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54"
+                    Point2="0,58"
+                    Point3="4,58" />
+                  <mssgle:LineSegment
+                    End="157,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="157,58"
+                    Point2="161,58"
+                    Point3="161,62" />
+                  <mssgle:LineSegment
+                    End="161,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL PRODUCTO.Paths[Data Conversion Output]"
+          TopLeft="524,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172.5,100"
+              Start="0,0"
+              End="172.5,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46"
+                    Point2="0,50"
+                    Point3="4,50" />
+                  <mssgle:LineSegment
+                    End="168.5,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.5,50"
+                    Point2="172.5,50"
+                    Point3="172.5,54" />
+                  <mssgle:LineSegment
+                    End="172.5,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL PRODUCTO\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL PRODUCTO\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ETL TIENDAS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\ETL TIENDAS\OLE DB Source"
+          TopLeft="311,123" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ETL TIENDAS\OLE DB Destination"
+          TopLeft="594,358" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\ETL TIENDAS\Data Conversion"
+          TopLeft="434,249" />
+        <EdgeLayout
+          Id="Package\ETL TIENDAS.Paths[OLE DB Source Output]"
+          TopLeft="386,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,84"
+              Start="0,0"
+              End="126,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="122,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122,42"
+                    Point2="126,42"
+                    Point3="126,46" />
+                  <mssgle:LineSegment
+                    End="126,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL TIENDAS.Paths[Data Conversion Output]"
+          TopLeft="512,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.5,67"
+              Start="0,0"
+              End="167.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="163.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.5,33.5"
+                    Point2="167.5,33.5"
+                    Point3="167.5,37.5" />
+                  <mssgle:LineSegment
+                    End="167.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL TIENDAS\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL TIENDAS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL ORDENES\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

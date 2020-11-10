@@ -1,0 +1,65 @@
+CREATE DATABASE DWBikeStores;
+GO
+USE DWBikeStores;
+GO
+
+
+CREATE TABLE DIM_TIENDAS (
+	tienda_id INT IDENTITY (1, 1) PRIMARY KEY,
+	tienda_nombre VARCHAR (255) NOT NULL,
+	tienda_telefono VARCHAR (25) NOT NULL,
+	tienda_email VARCHAR (255) NOT NULL,
+	tienda_calle VARCHAR (255) NOT NULL,
+	tienda_ciudad VARCHAR (255) NOT NULL,
+	tienda_estado VARCHAR (10) NOT NULL,
+	tienda_codigo VARCHAR (5) NOT NULL
+);
+
+
+CREATE TABLE DIM_PRODUCTOS(
+	productos_id INT IDENTITY(1,1) PRIMARY KEY,
+	productos_nombre VARCHAR (255) NOT NULL,
+	productos_marca VARCHAR (255) NOT NULL,
+	productos_precio DECIMAL (10, 2) NOT NULL
+);
+
+
+CREATE TABLE DIM_TIEMPO(
+	tiempo_id INT IDENTITY(1,1) PRIMARY KEY,
+	tiempo_fecha DATE NOT NULL,
+	tiempo_anio INT NOT NULL,
+	tiempo_mes INT NOT NULL,
+	tiempo_dia INT NOT NULL,
+);
+
+
+
+CREATE TABLE H_ORDENES(
+	tiendas_id INT NOT NULL,
+	productos_id INT NOT NULL,
+	tiempo_id INT NOT NULL,
+	ordenes_cantidad INT NOT NULL,
+	ordenes_precio DECIMAL (10, 2) NOT NULL,
+	ordenes_descuento DECIMAL (4, 2) NOT NULL
+);
+ALTER TABLE [dbo].[H_ORDENES]  WITH CHECK ADD  CONSTRAINT [FK_H_ORDENES_DIM_TIENDAS] FOREIGN KEY([tiendas_id])
+REFERENCES [dbo].[DIM_TIENDAS] ([tienda_id])
+GO
+
+ALTER TABLE [dbo].[H_ORDENES]  WITH CHECK ADD  CONSTRAINT [FK_H_ORDENES_DIM_PRODUCTOS] FOREIGN KEY([productos_id])
+REFERENCES [dbo].[DIM_PRODUCTOS] ([productos_id])
+GO
+
+ALTER TABLE [dbo].[H_ORDENES]  WITH CHECK ADD  CONSTRAINT [FK_H_ORDENES_DIM_TIEMPO] FOREIGN KEY([tiempo_id])
+REFERENCES [dbo].[DIM_TIEMPO] ([tiempo_id])
+GO
+
+
+
+
+---------
+DELETE FROM H_ORDENES;
+DELETE FROM DIM_TIENDAS;
+DELETE FROM DIM_PRODUCTOS;
+DELETE FROM DIM_TIEMPO;
+DELETE FROM H_ORDENES;
